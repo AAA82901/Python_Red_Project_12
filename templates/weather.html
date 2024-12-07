@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bеб-сервис, который предсказывает вероятность плохой погоды для заданного маршрута</title>
+</head>
+  <body>
+    <table>
+        <caption>Общая информация</caption>
+        <tr>
+            <th></th>
+            <th>Пункт Отправления</th>
+            <th>Пункт Прибытия</th>
+        </tr>
+        <tr>
+            <td>Страна</td>
+            <td>{{ country1 }}</td>
+            <td>{{ country2 }}</td>
+        </tr>
+        <tr>
+            <td>Регион</td>
+            <td>{{ region1 }}</td>
+            <td>{{ region2 }}</td>
+        </tr>
+        <tr>
+            <td>Название</td>
+            <td>{{ name1 }}</td>
+            <td>{{ name2 }}</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <caption>Информация о погоде</caption>
+        <tr>
+            <th></th>
+            <th>Пункт Отправления</th>
+            <th>Пункт Прибытия</th>
+        </tr>
+        <tr>
+            <td>Средняя температура (в °C)</td>
+            <td>{{ mean_temperature_1 }}</td>
+            <td>{{ mean_temperature_2 }}</td>
+        </tr>
+        <tr>
+            <td>Скорость ветра (в км/ч)</td>
+            <td>{{ wind_speed_1 }}</td>
+            <td>{{ wind_speed_2 }}</td>
+        </tr>
+        <tr>
+            <td>Вероятность дождя (в %)</td>
+            <td>{{ rain_probability_1 }}</td>
+            <td>{{ rain_probability_2 }}</td>
+        </tr>
+        <tr>
+            <td>Статус погодных условий</td>
+            <td>{{ weather_status_1 }}</td>
+            <td>{{ weather_status_2 }}</td>
+        </tr>
+    </table>
+    <br>
+    <div>Общий погодный статус на маршруте: {{ common_weather_status }}</div>
+  </body>
+</html>

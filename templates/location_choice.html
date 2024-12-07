@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bеб-сервис, который предсказывает вероятность плохой погоды для заданного маршрута</title>
+</head>
+<body>
+    <table>
+        <caption>Доступные варианты пункта отправления</caption>
+        <tr>
+            <th>№</th>
+            <th>Страна</th>
+            <th>Административная территория</th>
+            <th>Населённый пункт</th>
+        </tr>
+        {% for row in data1 %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <table>
+        <caption>Доступные варианты пункта прибытия</caption>
+        <tr>
+            <th>№</th>
+            <th>Страна</th>
+            <th>Административная территория</th>
+            <th>Населённый пункт</th>
+        </tr>
+        {% for row in data2 %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <form method="POST" action="http://127.0.0.1:5000/weather/{{data1}}&{{data2}}" enctype="multipart/form-data">
+        <label>Введите номер Вашего пункта отправления:</label>
+        <input type="number" name="p1_n" min=1 value=1 max={{max1}} placeholder="Номер пункта отправления" required>
+        <br>
+        <label>Введите номер Вашего пункта прибытия:</label>
+        <input type="number" name="p2_n" min=1 value=1 max={{max2}} placeholder="Номер пункта прибытия" required>
+        <br>
+        <button type="submit">Узнать информацию о погоде!</button>
+    </form>
+</body>
+</html>
